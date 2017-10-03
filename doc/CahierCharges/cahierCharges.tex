@@ -1,0 +1,196 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Structured General Purpose Assignment
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Ted Pavlic (http://www.tedpavlic.com)
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when
+% writing assignment content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+%% Use this packages to read accented UTF-8 inputs
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\projAuthorName} % Top left header
+\chead{\projName} % Top center header
+\rhead{\date{01.10.2017}} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%	Skip this unless you know what you're doing
+%----------------------------------------------------------------------------------------
+
+% Header and footer for when a page split occurs within a problem environment
+\newcommand{\enterProblemHeader}[1]{
+\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+}
+
+% Header and footer for when a page split occurs between problem environments
+\newcommand{\exitProblemHeader}[1]{
+\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak
+\nobreak\extramarks{#1}{}\nobreak
+}
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+\newcounter{homeworkProblemCounter} % Creates a counter to keep track of the number of problems
+
+\newcommand{\homeworkProblemName}{}
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\stepcounter{homeworkProblemCounter} % Increase counter for number of problems
+\renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
+\section{\homeworkProblemName} % Make a section in the document with the custom problem count
+\enterProblemHeader{\homeworkProblemName} % Header and footer within the environment
+}{
+\exitProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+\newcommand{\homeworkSectionName}{}
+\newenvironment{homeworkSection}[1]{ % New environment for sections within homework problems, takes 1 argument - the name of the section
+\renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
+\subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
+\enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]} % Header and footer within the environment
+}{
+\enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
+}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\projName}{VisuDNA-II} % Assignment title
+\newcommand{\projDate}{2017\textemdash2018}
+\newcommand{\docTitle}{Cahier des charges}
+\newcommand{\hmwkDueDate}{Monday,\ October\ 1,\ 2017} % Due date
+\newcommand{\hmwkClass}{BIO\ 101} % Course/class
+\newcommand{\hmwkClassTime}{10:30am} % Class/lecture time
+\newcommand{\hmwkClassInstructor}{Jones} % Teacher/lecturer
+\newcommand{\projAuthorName}{Sébastien Bouquet} % Your name
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+  \includegraphics[width=0.9\columnwidth]{Logo_HEIA}\\
+  \vspace{1cm}
+  \textmd{\textit{Filière informatique}} \\
+  \vspace{2cm}
+  \textmd{Projet de semestre d'automne}\\
+  \textmd{\projDate}\\
+  \vspace{1.5cm}
+  \noindent\makebox[\linewidth]{\rule{\textwidth}{0.5pt}}\\
+  \vspace{.5cm}
+  \textmd{\textbf{\projName}}\\
+  \textmd{\textbf{\docTitle}}\\
+  \noindent\makebox[\linewidth]{\rule{\textwidth}{0.5pt}}\\
+  % \normalsize\vspace{0.1in}\small{\hmwkDueDate}\\
+  % \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+  \vspace{3cm}
+  \textit{Responsables:} P. Kuonen, B. Wolf, J. Stoppani\\
+  \vspace{1cm}
+  \textit{Externe:} D. Atlan (PhenoSystems SA)\\
+  \vspace{1cm}
+  \textit{Autheur:} S. Bouquet
+}
+% \author{\textbf{\projAuthorName}}
+\date{} % Insert date here if you want it to appear below your name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+%\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
+
+% \newpage
+% \tableofcontents
+ \newpage
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+% To have just one problem per page, simply put a \clearpage after each problem
+
+\section{Context}
+\subsection{Projet initial}
+  Le projet initial, VisuDNA, avait pour but de mieux comprendre l'ADN et le génôme humain. Ceci peut être réaliser en analysant certaines séquences ADN commune à tous les êtres humains; c'est-à-dire l'interactome du génôme humain.  L'analyse des différents interactomes parmet notemment d'aider l'études des maladies génétiques par exemple en étant capable de prédire si un individu fait partie d'une catégorie de personnes à haut risque d'être atteint de quelque maladie génétique.
+  \\
+  La compréhension de l'interaction entre les gènes étant encore partielle, il est actuellement difficile de déterminer de manière conclusive les gènes responsable d'une certaine maladie. Ce projet avait donc pour but d'aider à la compréhension de ces interactions en permettant une représentation graphique des interactomes.
+\cite{Sisto:2015}
+
+\subsection{Suite du projet}
+  Ce premier projet a abouti à un résultat encourageant mais nécessitant encore certaines améliorations. Il faudra commencer par comprendre le travail réaliser précédemment puis rechercher s'il existe des librairies de visualisation de graphes plus performantes que celle utilisée (Gephi).
+
+\section{Buts du projet}
+Ce projet ce base sur un projet de semestre précédent qui avait pour but la visualisation de graphes d'interactions avec Gephi. Ce projet permettait de visualiser les graphes mais était limité quant à la manipulation de ceux-ci et souffrait de problèmes de performances lorsque les graphes contenait de nombreuses données.
+Ce nouveau projet doit donc essayer de résoudre ces problèmes soit en utilisant une librairie existante de visualisation de graphes plus performantes soit en créant une telle librairie si on ne peut pas en trouver une.
+
+\section{Plannification}
+Pour la prochaine séance:
+\begin{enumerate}
+  \item Envoi d'un premier e-mail aux responsables du projet.
+  \item Se renseigner quant au projet précédent après avoir obtenu l'accès à la forge de celui-ci.
+  \item Création du nouveau projet sur la forge et ajout des responsables en tant que superviseurs du projet.
+  \item Commencer l'écriture du cahier des charges.
+\end{enumerate}
+
+
+
+%----------------------------------------------------------------------------------------
+\begingroup
+  % \renewcommand{\section}[2]{}
+  \bibliographystyle{model1-num-names}
+  \bibliography{sample}
+  \nocite{*}
+\endgroup
+
+\end{document}
