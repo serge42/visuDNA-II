@@ -26,10 +26,13 @@
 \usepackage{extramarks} % Required for headers and footers
 \usepackage{graphicx} % Required to insert images
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
-%% Use this packages to read accented UTF-8 inputs
+%% Packages used to read accented UTF-8 inputs
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{multicol}
+% \usepackage{multicol} unused
+% Packages for the Gantt diagram
+\usepackage{pgfgantt}
+\usepackage{xcolor}
 
 % Margins
 \topmargin=-0.45in
@@ -103,12 +106,10 @@
 
 \newcommand{\projName}{VisuDNA-II} % Assignment title
 \newcommand{\projDate}{2017\textemdash2018}
+\newcommand{\projAuthorName}{S. Bouquet} % Your name
+\newcommand{\projSupervisors}{P. Kuonen, B. Wolf, J. Stoppani}
+\newcommand{\projInitiator}{D. Atlan (PhenoSystem SA)}
 \newcommand{\docTitle}{Cahier des charges}
-\newcommand{\hmwkDueDate}{Monday,\ October\ 1,\ 2017} % Due date
-\newcommand{\hmwkClass}{BIO\ 101} % Course/class
-\newcommand{\hmwkClassTime}{10:30am} % Class/lecture time
-\newcommand{\hmwkClassInstructor}{Jones} % Teacher/lecturer
-\newcommand{\projAuthorName}{Sébastien Bouquet} % Your name
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -129,12 +130,14 @@
   \noindent\makebox[\linewidth]{\rule{\textwidth}{0.5pt}}\\
   % \normalsize\vspace{0.1in}\small{\hmwkDueDate}\\
   % \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
+  \Large
   \vspace{3cm}
-  \textit{Responsables:} P. Kuonen, B. Wolf, J. Stoppani\\
+  \textit{Responsables:} \projSupervisors \\
   \vspace{1cm}
-  \textit{Externe:} D. Atlan (PhenoSystems SA)\\
+  \textit{Externe:} \projInitiator \\
   \vspace{1cm}
-  \textit{Autheur:} S. Bouquet
+  \textit{Autheur:} \projAuthorName \\
+  \author{}
 }
 % \author{\textbf{\projAuthorName}}
 \date{} % Insert date here if you want it to appear below your name
@@ -165,29 +168,123 @@
   Le projet initial, VisuDNA, avait pour but de mieux comprendre l'ADN et le génôme humain. Ceci peut être réaliser en analysant certaines séquences ADN commune à tous les êtres humains; c'est-à-dire l'interactome du génôme humain.  L'analyse des différents interactomes parmet notemment d'aider l'études des maladies génétiques par exemple en étant capable de prédire si un individu fait partie d'une catégorie de personnes à haut risque d'être atteint de quelque maladie génétique.
   \\
   La compréhension de l'interaction entre les gènes étant encore partielle, il est actuellement difficile de déterminer de manière conclusive les gènes responsable d'une certaine maladie. Ce projet avait donc pour but d'aider à la compréhension de ces interactions en permettant une représentation graphique des interactomes.
-\cite{Sisto:2015}
+\cite{Sisto:2014}
 
 \subsection{Suite du projet}
   Ce premier projet a abouti à un résultat encourageant mais nécessitant encore certaines améliorations. Il faudra commencer par comprendre le travail réaliser précédemment puis rechercher s'il existe des librairies de visualisation de graphes plus performantes que celle utilisée (Gephi).
 
 \section{Buts du projet}
-Ce projet ce base sur un projet de semestre précédent qui avait pour but la visualisation de graphes d'interactions avec Gephi. Ce projet permettait de visualiser les graphes mais était limité quant à la manipulation de ceux-ci et souffrait de problèmes de performances lorsque les graphes contenait de nombreuses données.
-Ce nouveau projet doit donc essayer de résoudre ces problèmes soit en utilisant une librairie existante de visualisation de graphes plus performantes soit en créant une telle librairie si on ne peut pas en trouver une.
+  Ce projet ce base sur un projet de semestre précédent qui avait pour but la visualisation de graphes d'interactions avec Gephi. Ce projet permettait de visualiser les graphes mais était limité quant à la manipulation de ceux-ci et souffrait de problèmes de performances lorsque les graphes contenait de nombreuses données.
+  Ce nouveau projet doit donc essayer de résoudre ces problèmes soit en utilisant une librairie existante de visualisation de graphes plus performante soit en créant une telle librairie si on ne peut pas en trouver une adéquate.
+  \subsection{Objectifs}
+  \begin{itemize}
+    \item Compréhension du projet initial et des librairies existantes.
+    \item Création de prototypes pour tester les librairies trouvées et déterminer si l'une d'elle est adaptée au projet
+    \item Début de conception du nouveau projet d'après les résultats des points précédents.
+  \end{itemize}
 
-\section{Plannification}
-Pour la prochaine séance:
-\begin{enumerate}
-  \item Envoi d'un premier e-mail aux responsables du projet.
-  \item Se renseigner quant au projet précédent après avoir obtenu l'accès à la forge de celui-ci.
-  \item Création du nouveau projet sur la forge et ajout des responsables en tant que superviseurs du projet.
-  \item Commencer l'écriture du cahier des charges.
-\end{enumerate}
+\section{Glossaire}
+  \begin{itemize}
+    \item \textit{Interactome}: contient les interactions entre les gènes.
+    \item \textit{Interactome annoté}: contient l'interactome avec des annotations concernant les gènes, les interactions, les variants et les maladies associées.
+    \item \textit{Graphe augmenté}: (the borg graph), contient l'interactome annoté augmenté des données du patient.
+  \end{itemize}
+\cite{Sisto:2014}
 
+\section{Activités}
+  \subsection{Analyse du projet précédent}
+    \begin{itemize}
+      \item Définir les points à améliorés
+      \item Tests de performances
+    \end{itemize}
+  \subsection{Recherche et tests de librairies de visualisation de graphes avancées}
+    \begin{itemize}
+      \item Création de prototypes pour les librairies qui semblent adaptées au projet.
+    \end{itemize}
+  \subsection{Permettre la génération de fichiers de résultats}
+    \begin{itemize}
+      \item Inspirée peut-être de la solution implémentée dans le projet précédent.
+    \end{itemize}
+
+\section{Contraintes}
+  Aucune contrainte spécifique n'a été spécifiée pour le moment.\\
+  Ce projet, comme son prédécesseur, est actuellement prévu pour utiliser Java bien que rien n'empêche l'utilisation d'autres langages si cela est jugé nécessaire au cours du projet.
+
+\section{Planification}
+
+\ganttset{
+  group/.append style={orange},
+  milestone/.append style={red},
+  progress label node anchor/.append style={text=red}
+}
+\begin{ganttchart}[
+  x unit=1mm,
+  y unit title=5mm,
+  y unit chart=1cm,
+  hgrid, vgrid,
+  title height=1,
+  title label font=\bfseries\footnotesize,
+  bar/.style={fill=blue},
+  bar height=0.7,
+  progress label text={},
+  group right shift=0,
+  group top shift=0.7,
+  group height=0.3,
+  group peaks width={0.2},
+  time slot format=isodate,
+  inline,
+  calendar week text=A\currentweek
+  ]{2017-09-26}{2018-02-09}
+  \gantttitlecalendar{year, week} \\
+  \ganttgroup[inline=false]{Start}{2017-09-27}{2017-10-13} \\
+  \ganttbar[progress=80, inline=false]{Cahier charges}{2017-09-27}{2017-10-10} \\
+  \ganttbar[inline=false, progress=30]{Review ancien projet}{2017-10-08}{2017-10-13} \\
+  \ganttmilestone[inline=false]{Rendu cahier}{2017-10-13} \\
+
+  \ganttgroup[inline=false]{Prototypes}{2017-10-14}{2017-11-08} \\
+  \ganttbar[progress=0, inline=false]{Review ancien projet}{2017-10-14}{2017-10-15} \\
+  \ganttlinkedbar[progress=0, inline=false]{Prototypes}{2017-10-15}{2017-11-04} \\
+  \ganttbar[progress=0,inline=false]{Préparer présentation}{2017-11-05}{2017-11-08} \\
+  \ganttmilestone[inline=false]{Presentation}{2017-11-08} \\
+
+  \ganttgroup[inline=false]{Conception}{2017-11-09}{2018-01-01} \\
+
+  \ganttgroup[inline=false]{Implémentation}{2017-11-23}{2018-01-28} \\
+
+  \ganttgroup[inline=false]{Tests}{2017-12-07}{2018-02-01} \\
+  \ganttbar[inline=false,progress=0]{Unitaires}{2017-12-07}{2018-01-18} \\
+  \ganttbar[inline=false,progress=0]{fonctionnels}{2018-01-12}{2018-02-01} \\
+
+  \ganttmilestone[inline=false]{Rendu rapport}{2018-02-01} \\
+
+  \ganttgroup[inline=false]{Préparation défense}{2018-02-02}{2018-02-07} \\
+  \ganttmilestone[inline=false]{Défense}{2018-02-08} \\
+\end{ganttchart} \\
+% \begin{ganttchart}[%Specs]
+%     % Setting group if any
+%     \ganttgroup[inline=false]{Group 1}{1}{5}\\
+%     \ganttbar[progress=10,inline=false]{Planning}{1}{4}\\
+%     \ganttmilestone[inline=false]{Milestone 1}{9} \\
+%
+%     \ganttgroup[inline=false]{Group 2}{6}{12} \\
+%     \ganttbar[progress=2,inline=false]{test1}{10}{19} \\
+%     \ganttmilestone[inline=false]{Milestone 2}{17} \\
+%     \ganttbar[progress=5,inline=false]{test2}{11}{20} \\
+%     \ganttmilestone[inline=false]{Milestone 3}{22} \\
+%
+%     \ganttgroup[inline=false]{Group 3}{13}{24} \\
+%     \ganttbar[progress=90,inline=false]{Task A}{13}{15} \\
+%     \ganttbar[progress=50,inline=false, bar progress label node/.append style={below left= 10pt and 7pt}]{Task B}{13}{24} \\ \\
+%     \ganttbar[progress=30,inline=false]{Task C}{15}{16}\\
+%     \ganttbar[progress=70,inline=false]{Task D}{18}{20} \\
+% \end{ganttchart}
 
 
 %----------------------------------------------------------------------------------------
+\newpage
 \begingroup
-  % \renewcommand{\section}[2]{}
+  % Modifies the title of the "references" section
+  \renewcommand{\section}[2]{\Large\textbf{Références}\normalsize}
   \bibliographystyle{model1-num-names}
   \bibliography{sample}
   \nocite{*}

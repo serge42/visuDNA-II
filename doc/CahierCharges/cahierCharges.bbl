@@ -3,7 +3,7 @@
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
 %Type = Article
-\bibitem[{Sisto(2014)}]{Sisto:2015}
+\bibitem[{Sisto(2014)}]{Sisto:2014}
 \bibinfo{author}{M.~Sisto},
 \newblock \bibinfo{title}{Cahier des charges v4}  (\bibinfo{year}{2014}).
 
