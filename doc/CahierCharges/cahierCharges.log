@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.2.27)  3 OCT 2017 23:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.2.27)  7 OCT 2017 23:39
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -845,27 +845,27 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 181.
- [2]
-Overfull \hbox (32.14406pt too wide) in paragraph at lines 262--281
+ [2] [3]
+Overfull \hbox (19.47635pt too wide) in paragraph at lines 309--328
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--281
+Underfull \hbox (badness 10000) in paragraph at lines 309--328
 
  []
 
-[3] [4] (./cahierCharges.bbl) 
+[4] (./cahierCharges.bbl) 
 AED: lastpage setting LastPage
 [5] (./cahierCharges.aux) ) 
 Here is how much of TeX's memory you used:
- 14705 strings out of 494946
- 303847 string characters out of 6180981
- 456831 words of memory out of 5000000
- 17710 multiletter control sequences out of 15000+600000
+ 14798 strings out of 494946
+ 306195 string characters out of 6180981
+ 457537 words of memory out of 5000000
+ 17803 multiletter control sequences out of 15000+600000
  15379 words of font info for 35 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 62i,11n,85p,528b,786s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,85p,528b,814s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-su
 per/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx08
@@ -879,7 +879,7 @@ s/type1/public/cm-super/sfrm1728.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/cm-super/sfti1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /cm-super/sfti1440.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-sup
 er/sfti1728.pfb>
-Output written on cahierCharges.pdf (5 pages, 458011 bytes).
+Output written on cahierCharges.pdf (5 pages, 461794 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream

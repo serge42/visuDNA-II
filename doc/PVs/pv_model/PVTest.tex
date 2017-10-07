@@ -100,12 +100,10 @@
 %	NAME AND CLASS SECTION
 %----------------------------------------------------------------------------------------
 
-\newcommand{\hmwkTitle}{PV séance du 27.09.2017} % Assignment title
-\newcommand{\hmwkDueDate}{Monday,\ October\ 1,\ 2017} % Due date
-\newcommand{\hmwkClass}{BIO\ 101} % Course/class
-\newcommand{\hmwkClassTime}{10:30am} % Class/lecture time
-\newcommand{\hmwkClassInstructor}{Jones} % Teacher/lecturer
-\newcommand{\hmwkAuthorName}{Sébastien Bouquet} % Your name
+\newcommand{\hmwkTitle}{PV séance du 04.11.2017} % title
+\newcommand{\hmwkAuthorName}{S. Bouquet} % Your name
+%% Puts on horizontal line
+\newcommand{\hLine}{\noindent\makebox[\linewidth]{\rule{\textwidth}{.1pt}} \\}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -114,13 +112,11 @@
 \title{
 \vspace{2in}
 \textmd{\textbf{\hmwkTitle}}\\
-% \normalsize\vspace{0.1in}\small{\hmwkDueDate}\\
-% \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
 \vspace{3in}
 }
 
 \author{\textbf{\hmwkAuthorName}}
-\date{01.10.2017} % Insert date here if you want it to appear below your name
+\date{\today} % Insert date here if you want it to appear below your name
 
 %----------------------------------------------------------------------------------------
 
@@ -142,24 +138,46 @@
 %	PROBLEM 1
 %----------------------------------------------------------------------------------------
 
-% To have just one problem per page, simply put a \clearpage after each problem
+% To have just one problem per page, simply put a \clearpage after each
+\large\textbf{Participants:}\normalsize~~B. Wolf, J. Stoppani, F. Wagen, D. Atlan, \hmwkAuthorName\\
+\large\textbf{Excusés:}\normalsize~~P. Kuonen\\
+\hLine
 
-\section{Points administratifs}
-Les principaux points administratifs du projet ont été discutés durant cette première séance. Les documents du projets seront à rendre sur la forge dans la section documents. Les prochaines séances seront demandées par le responsable du projet, normalement une fois par semaine. Des PV de séances seront ajoutés après chaque séance.
+\section{Points abordés}
+\begin{enumerate}
+  \item Discussion du cahier des charges.
+  \item Discussion des buts du projets.
+  \item Discussion sur les différents graphes utiles, pas seulement les interactomes.
+  \item Idée de réaliser une application web.
+\end{enumerate}
 
-\section{Buts du projet}
-Ce projet ce base sur un projet de semestre précédent qui avait pour but la visualisation de graphes d'interactions avec Gephi. Ce projet permettait de visualiser les graphes mais était limité quant à la manipulation de ceux-ci et souffrait de problèmes de performances lorsque les graphes contenait de nombreuses données.
-Ce nouveau projet doit donc essayer de résoudre ces problèmes soit en utilisant une librairie existante de visualisation de graphes plus performantes soit en créant une telle librairie si on ne peut pas en trouver une.
+\section{Décisions}
+\begin{enumerate}
+  \item Besoin de réévaluer les outils disponibles; rechercher pourquoi Gephi avait été choisi pour le premier projet.
+  \item Définir un UseCase de l'application.
+  \item Ajout des participants sur les PVs.
+  \item Ajout des dates et des personnes responsables pour les tâches à réaliser.
+  \item Les graphes peuvent devenir relativement grands (plus de 100'000 noeuds); nécessité d'avoir des fonctions de filtre pour isoler une partie du graphe.
+  \item L'application doit pourvoir réaliser des graphes augmentés en intégrant les données du patient.
+\end{enumerate}
 
 \section{Tâches}
 Pour la prochaine séance:
 \begin{enumerate}
-  \item Envoi d'un premier e-mail aux responsables du projet.
-  \item Se renseigner quant au projet précédent après avoir obtenu l'accès à la forge de celui-ci.
-  \item Création du nouveau projet sur la forge et ajout des responsables en tant que superviseurs du projet.
-  \item Commencer l'écriture du cahier des charges.
+  \item \textit{B. Wolf, J. Stoppani:} récupérer un exemple de données à traiter. (jusqu'au 11.10.2017)
+  \item \textit{J. Stoppani:} ajouter M. Wagen à la forge du projet (terminée).
+  \item \textit{\hmwkAuthorName:} Lire le rapport du projet VisuDNA et tester le fonctionnement des diagrammes qu'il crée (jusqu'au 11.10.2017).
+  \item \textit{\hmwkAuthorName:} Recherche d'informations sur les différents outils qu'on pourrait utiliser pour réaliser le projet et définir lequel est le plus adapté. (jusqu'au 18.10.2017)
+  \item \textit{\hmwkAuthorName:} Amélioration des buts est des tâches du cahier des charges. Les tâches doivent correspondre à celles du planning; ajout des périodes de vacance sur le planning. (jusqu'au 11.10.2017)
+  \item \textit{\hmwkAuthorName:} Définir les cas d'utilisation (jusqu'au 14.10.17)
 \end{enumerate}
 
+\section{Points ouverts}
+\begin{itemize}
+  \item Faut-il récupérer le programme de pré-traitement du projet précédent si cela fait sens dans ce nouveau projet (à définir d'après les cas d'utilisation).
+  \item Choix de l'outil à utiliser (Gephi, Gama, Cytoscape, travail de J. Stoppani ou autre)
+  \item Choix entre une application web ou locale
+\end{itemize}
 
 
 %----------------------------------------------------------------------------------------
