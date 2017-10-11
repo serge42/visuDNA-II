@@ -1,0 +1,20 @@
+#Format: HPO-ID<tab>HPO-Name<tab>Gene-ID<tab>Gene-Name
+HP:0001459	1-3 toe syndactyly	2737	GLI3
+HP:0006088	1-5 finger complete cutaneous syndactyly	64327	LMBR1
+HP:0010708	1-5 finger syndactyly	64327	LMBR1
+HP:0010713	1-5 toe syndactyly	2737	GLI3
+HP:0000878	11 pairs of ribs	10013	HDAC6
+HP:0000878	11 pairs of ribs	3930	LBR
+HP:0000878	11 pairs of ribs	6662	SOX9
+HP:0000878	11 pairs of ribs	100151683	RNU4ATAC
+HP:0000878	11 pairs of ribs	545	ATR
+HP:0000878	11 pairs of ribs	6223	RPS19
+HP:0000878	11 pairs of ribs	126792	B3GALT6
+HP:0000878	11 pairs of ribs	2317	FLNB
+HP:0001233	2-3 finger syndactyly	2255	FGF10
+HP:0001233	2-3 finger syndactyly	2719	GPC3
+HP:0001233	2-3 finger syndactyly	50964	SOST
+HP:0001233	2-3 finger syndactyly	5307	PITX1
+HP:0001233	2-3 finger syndactyly	2261	FGFR3
+HP:0001233	2-3 finger syndactyly	2263	FGFR2
+HP:0005709	2-3 toe cutaneous syndactyly	81607	PVRL4
