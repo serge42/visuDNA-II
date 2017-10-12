@@ -168,11 +168,11 @@
 \subsection{Projet initial}
   Le projet initial, VisuDNA, avait pour but de mieux comprendre l'ADN et le génôme humain. Ceci peut être réaliser en analysant certaines séquences ADN commune à tous les êtres humains; c'est-à-dire l'interactome du génôme humain.  L'analyse des différents interactomes parmet notemment d'aider l'études des maladies génétiques par exemple en étant capable de prédire si un individu fait partie d'une catégorie de personnes à haut risque d'être atteint de quelque maladie génétique.
   \\
-  La compréhension de l'interaction entre les gènes étant encore partielle, il est actuellement difficile de déterminer de manière conclusive les gènes responsable d'une certaine maladie. Ce projet avait donc pour but d'aider à la compréhension de ces interactions en permettant une représentation graphique des interactomes.
+  La compréhension de l'interaction entre les gènes étant encore partielle, il est actuellement difficile de déterminer de manière conclusive les gènes responsables d'une certaine maladie. Ce projet avait donc pour but d'aider à la compréhension de ces interactions en permettant une représentation graphique de l'interactome.
 \cite{Sisto:2014}
 
 \subsection{Suite du projet}
-  Ce premier projet a abouti à un résultat encourageant mais nécessitant encore certaines améliorations. Il faudra commencer par comprendre le travail réaliser précédemment puis rechercher s'il existe d'autres outils de visualisation de graphes plus performants pour développer le nouveau projet ou s'il y a une possibilité d'améliorer la solution pécédente.
+  Ce premier projet a abouti à un résultat encourageant mais nécessitant encore certaines améliorations. Il faudra commencer par comprendre le travail réaliser précédemment puis rechercher s'il existe d'autres outils de visualisation de graphes plus performants pour développer le nouveau projet ou s'il y a une possibilité d'améliorer la solution précédente.
 
 \section{Buts du projet}
   Ce projet ce base sur un projet de semestre précédent qui avait pour but la visualisation de graphes d'interactions avec Gephi. Ce projet permettait de visualiser les graphes mais était limité quant à la manipulation de ceux-ci et souffrait de problèmes de performances lors de la visualisation de grands graphes.\\
@@ -180,24 +180,25 @@
   \subsection{Objectifs}
   \begin{itemize}
     \item Compréhension du projet initial ainsi que des librairies et des outils utilisés.
-    \item Création de prototypes permettants de choisir quel outil serait le plus adapté à la réalisation du projet.
+    \item Création de prototypes permettant de choisir quel outil serait le plus adapté à la réalisation du projet.
     \item Conception du nouveau projet d'après les résultats des points précédents.
     \item Implémentaion du projet.
+    \item Documentation du processus de développement.
   \end{itemize}
 
 \section{Glossaire}
   \begin{itemize}
     \item \textit{Interactome}: contient les interactions entre les gènes.
     \item \textit{Interactome annoté}: contient l'interactome avec des annotations concernant les gènes, les interactions, les variants et les maladies associées.
-    \item \textit{Graphe augmenté}: contient l'interactome (et possiblement d'autre(s) graphe(s)) annoté(s) et augmenté(s) des données d'un patient.
+    \item \textit{Graphe augmenté}: contient l'interactome (et possiblement d'autres graphes) annoté et augmenté des données d'un patient.
   \end{itemize}
 \cite{Sisto:2014}
 
 \section{Activités}
   \subsection{Spécifications}
     \begin{itemize}
-      \item Définir les points à améliorés
-      \item Tests de performances
+      \item Tests de l'ancien projet (cf. annexe 1)
+      \item Elaboration du cahier des charges.
     \end{itemize}
   \subsection{Analyse}
     \begin{itemize}
@@ -214,7 +215,9 @@
   \subsection{Tests}
   Les tests à effectuer seront définits durant la conception du projet.
   \subsection{Documentation}
-  Rapport de l'application et documents annexes le cas échéant.
+  Le rapport de l'application et les éventuels documents annexes seront réaliser
+  tout au long du processus de développement.\\
+  Un mode d'emploi sera écris à la fin de l'implémentation si nécessaire.
   \subsection{Préparation défense}
 
 \section{Contraintes}
@@ -276,18 +279,19 @@
   \ganttbar[progress=0,inline=false]{Préparation}{2017-11-05}{2017-11-08} \\
   \ganttmilestone[inline=false,]{Presentation}{2017-11-08} \\
   %CONCEPTION
-  \ganttgroup[inline=false]{Conception}{2017-11-09}{2018-01-01}\\
+  \ganttgroup[inline=false]{Conception}{2017-11-09}{2017-12-25}\\
   \ganttbar[inline=false,progress=0]{Diag. Classes}{2017-11-09}{2017-11-16}\\
 
   %IMPLEMENTATION
-  \ganttgroup[inline=false]{Implémentation}{2017-11-23}{2018-01-28} \\
+  \ganttgroup[inline=false]{Implémentation}{2017-11-23}{2018-01-14} \\
   %TESTS
   \ganttgroup[inline=false]{Tests}{2017-12-11}{2018-02-01} \\
   \ganttbar[inline=false,progress=0]{Unitaires}{2017-12-11}{2018-01-18} \\
   \ganttbar[inline=false,progress=0]{fonctionnels}{2018-01-12}{2018-02-01} \\
   %DOCUMENTATION
-  \ganttgroup[inline=false]{Documentation}{2017-11-25}{2018-02-01}\\
-  \ganttbar[inline=false,progress=0]{Ecriture rapport}{2017-11-25}{2018-02-01}\\
+  \ganttgroup[inline=false]{Documentation}{2017-10-16}{2018-02-01}\\
+  \ganttbar[inline=false,progress=0]{Ecriture rapport}{2017-10-16}{2018-02-01}\\
+  \ganttbar[inline=false,progress=0]{Mode d'emploi}{2018-1-8}{2018-2-1}\\
   \ganttmilestone[inline=false]{Rendu rapport}{2018-02-01} \\
 
   \ganttgroup[inline=false]{Défense}{2018-02-02}{2018-02-07}\\
@@ -302,10 +306,10 @@
 
   % shading
   \begin{scope}
-    \draw[opacity=.7,line width=7](holiday-october-top) -- ($(holiday-october-bottom)+(0,-5pt)$);
+    \draw[opacity=.7,line width=7mm](holiday-october-top) -- ($(holiday-october-bottom)+(0,-5pt)$);
     % \draw[opacity=.7,line width=3](holiday-november-top) -- ($(holiday-november-bottom)+(0,-5pt)$);
     % \draw[opacity=.7,line width=3](holiday-december1-top) -- ($(holiday-december1-bottom)+(0,-5pt)$);
-    \draw[opacity=.7,line width=14](holiday-december-top) -- ($(holiday-december-bottom)+(0,-5pt)$);
+    \draw[opacity=.7,line width=15mm](holiday-december-top) -- ($(holiday-december-bottom)+(0,-5pt)$);
   \end{scope}
 \end{ganttchart} \\
 % \begin{ganttchart}[%Specs]
