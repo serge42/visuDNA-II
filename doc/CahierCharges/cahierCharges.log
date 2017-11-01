@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.10)  15 OCT 2017 15:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.10)  1 NOV 2017 19:34
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **./cahierCharges.tex
 (./cahierCharges.tex
@@ -733,21 +732,21 @@ File: pgfcalendar.code.tex 2007/07/23 v3.0.1a (rcs-revision 1.11)
 (./cahierCharges.aux)
 \openout1 = `cahierCharges.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 148.
-LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 148.
+(lastpage)             ! on input line 151.
 
 (f:/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -822,51 +821,56 @@ ABD: EveryShipout initializing macros
 <Logo_HEIA.jpg, id=4, 2436.10126pt x 337.26pt>
 File: Logo_HEIA.jpg Graphic file (type jpg)
 <use Logo_HEIA.jpg>
-Package pdftex.def Info: Logo_HEIA.jpg  used on input line 150. on input line 1
-50.
+Package pdftex.def Info: Logo_HEIA.jpg  used on input line 153. on input line 1
+53.
 Package pdftex.def Info: Requested size: 422.77661pt x 58.52734pt on input line
- 150.
+ 153.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 150.
+(Font)              <12> on input line 153.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 150.
+(Font)              <8> on input line 153.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 150.
+(Font)              <6> on input line 153.
  [1
 
 {f:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Logo_HEIA.jpg
->]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 182.
+>] (./cahierCharges.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+)
+\tf@toc=\write4
+\openout4 = `cahierCharges.toc'.
+
+ [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 188.
 
 
 (f:/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 182.
- [2] [3] [4]
-Overfull \hbox (40.44333pt too wide) in paragraph at lines 347--366
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
+ [3] [4] [5]
+Overfull \hbox (1.46263pt too wide) in paragraph at lines 358--377
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--366
+Underfull \hbox (badness 10000) in paragraph at lines 358--377
 
  []
 
-
-Overfull \vbox (30.19505pt too high) has occurred while \output is active []
-
-
-[5] [6] (./cahierCharges.bbl) 
+[6] [7] (./cahierCharges.bbl) 
 AED: lastpage setting LastPage
-[7] (./cahierCharges.aux) ) 
+[8] (./cahierCharges.aux) ) 
 Here is how much of TeX's memory you used:
- 14899 strings out of 492990
- 307717 string characters out of 6136333
- 470532 words of memory out of 5000000
- 18168 multiletter control sequences out of 15000+600000
- 15379 words of font info for 35 fonts, out of 8000000 for 9000
+ 14936 strings out of 492990
+ 308338 string characters out of 6136333
+ 471628 words of memory out of 5000000
+ 18199 multiletter control sequences out of 15000+600000
+ 17518 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,11n,85p,534b,818s stack positions out of 5000i,500n,10000p,200000b,80000s
 {f:/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super
@@ -879,12 +883,13 @@ s/type1/public/cm-super/sfbx1728.pfb><f:/texlive/2017/texmf-dist/fonts/type1/pu
 blic/cm-super/sfrm1000.pfb><f:/texlive/2017/texmf-dist/fonts/type1/public/cm-su
 per/sfrm1440.pfb><f:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm17
 28.pfb><f:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><f:
-/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb><f:/texlive/2
-017/texmf-dist/fonts/type1/public/cm-super/sfti1728.pfb>
-Output written on cahierCharges.pdf (7 pages, 464714 bytes).
+/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><f:/texlive/2
+017/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb><f:/texlive/2017/texmf-
+dist/fonts/type1/public/cm-super/sfti1728.pfb>
+Output written on cahierCharges.pdf (8 pages, 494253 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 88 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

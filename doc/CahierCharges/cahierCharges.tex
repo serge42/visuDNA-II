@@ -111,6 +111,7 @@
 \newcommand{\projSupervisors}{P. Kuonen, B. Wolf, J. Stoppani}
 \newcommand{\projInitiator}{D. Atlan (PhenoSystem SA)}
 \newcommand{\docTitle}{Cahier des charges}
+\newcommand{\docVersion}{Version 1.0 - 19.12.2017}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -123,11 +124,13 @@
   \vspace{2cm}
   \textmd{Projet de semestre d'automne}\\
   \textmd{\projDate}\\
-  \vspace{1.5cm}
+  \vspace{1cm}
   \noindent\makebox[\linewidth]{\rule{\textwidth}{0.5pt}}\\
   \vspace{.5cm}
   \textmd{\textbf{\projName}}\\
   \textmd{\textbf{\docTitle}}\\
+  \vspace{.5cm}\large
+  \textmd{\textit{\docVersion}}\\
   \noindent\makebox[\linewidth]{\rule{\textwidth}{0.5pt}}\\
   % \normalsize\vspace{0.1in}\small{\hmwkDueDate}\\
   % \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ \hmwkClassTime}}
@@ -154,9 +157,12 @@
 
 %\setcounter{tocdepth}{1} % Uncomment this line if you don't want subsections listed in the ToC
 
-% \newpage
-% \tableofcontents
- \newpage
+ \begingroup
+ 	\newpage
+ 	\renewcommand{\contentsname}{Table des matières}
+ 	\tableofcontents
+ 	\newpage
+ \endgroup
 
 %----------------------------------------------------------------------------------------
 %	PROBLEM 1
@@ -203,39 +209,41 @@
     \end{itemize}
   \subsection{État de l'art}
     \begin{itemize}
-      \item Lecture des spécifications et du rapport de l'ancien projet et tester celui-ci (cf. annexe 1)
+      \item Lecture des spécifications et du rapport de l'ancien projet et tester celui-ci (cf. annexe 1).
       \item Recherche d'outils de visualisation de graphes avancés
-      \item Établissement de critères de comparaison et comparaison des outils
-      \item M1: choix de l'outil qui semble le plus adapté au projet
+      \item Établissement de critères de comparaison puis comparaison des outils trouvés.
+      \item M1: choix de l'outil le plus adapté au projet.
     \end{itemize}
   \subsection{Conception}
     \begin{itemize}
       \item Comprendre le fonctionnement de l'outil choisi.
       \item Schématiser l'intégration de l'outil dans ce projet (p.ex. diagrammes de séquence ou d'activité)
-      \item Définition du diagramme des classes d'après l'outil à utiliser durant ce projet.
-      \item Définition des cas tests du logiciel (certainement à améliorer après le début de l'implémentation).
+      \item Définition du diagramme des classesé.
+      \item Définition des cas tests pour l'application finale.
       \item M2: diagrammes définissant le fonctionnement du projet avec l'outil sélectionné.
     \end{itemize}
   \subsection{Implémentation}
-  Pour le moment seul un temps d'implémentation a été réservé.
-  Des tâches plus précises ne peuvent pas être définies avant la fin de la conception.
-  \begin{itemize}
+  	\begin{itemize}
+  		\item Créer un graphe augmenté qui puisse être lu par le ou les outils sélectionnés.
+  		\item Intégrer la visualisation du graphe; soit en créant un plug-in comme cela a été fait durant le projet précédent, soit en intégrant la partie de visualisation dans notre programme.
+  		\item Ajouter des possibilité de modifier le layout, de filtrer et d'annoter les graphes.
+  		\item Temps réservé: si un élément non planifier doit être implémenter ou si une tâche a pris plus de temps que prévu.
     \item M3: premier prototype fonctionnel du logiciel.
   \end{itemize}
   \subsection{Tests}
   Un temps de test a été réservé; définition des tests durant la conception.
   \begin{itemize}
-    \item D2: application finale.
+    \item D4: application finale.
   \end{itemize}
   \subsection{Rapport}
   \begin{itemize}
-    \item Documenter le choix de l'outil sélectionner, définir des critères de sélection et un système de notation.
-    \item Ajout des diagrammes de conception. Description du fonctionnement désiré de l'application finale.
+    \item Documenter le choix de l'outil sélectionné, définir des critères de sélection et un système de notation.
+    \item Ajout les diagrammes de conception. Description du fonctionnement désiré de l'application finale.
     \item Décrire les étapes d'implémentation et les problèmes rencontrés.
-    \item Tests de l'application produite.
-    \item Conclusion: définir ce qui pourrait encore être améliorer sur ce projet.
-    \item Annexe possible: mode d'emploi.
-    \item D3: rapport final.
+    \item Description des tests de l'application finale et des résultats obtenus.
+    \item Conclusion: définir ce qui pourrait être amélioré sur le résultat obtenu.
+    \item D6(annexe): mode d'emploi.
+    \item D5: rapport final.
   \end{itemize}
   \subsection{Préparation à la défense}
 
@@ -251,9 +259,9 @@
   progress label node anchor/.append style={text=red}
 }
 \begin{ganttchart}[
-  x unit=1mm,
+  x unit=.9mm,
   y unit title=5mm,
-  y unit chart=6mm,
+  y unit chart=5mm,
   hgrid, vgrid,
   title height=1,
   title label font=\bfseries\footnotesize,
@@ -273,7 +281,7 @@
   calendar week text=A\currentweek,
   today label=Current Week,
   today rule/.style={draw=red, thick},
-  today=2017-10-18,
+  today=2017-11-02,
   today label node/.append style={anchor=north west}
   ]{2017-09-26}{2018-02-09}
   \gantttitlecalendar{year, month=shortname} \\
@@ -285,51 +293,54 @@
 
   %gantt chart content
   \ganttgroup[inline=false]{Spécifications}{2017-09-27}{2017-10-18} \\
-  \ganttbar[progress=100,inline=false]{UC général}{2017-10-05}{2017-10-15}\\
-  \ganttbar[progress=95, inline=false]{Cahier des charges}{2017-09-27}{2017-10-18}\\
+  \ganttbar[progress=100, inline=false]{Cahier des charges}{2017-09-27}{2017-10-18}\\
   \ganttmilestone[inline=false]{D1: rendu cahier}{2017-10-18} \\
   %Etat de l'art
   \ganttgroup[inline=false]{État de l'art}{2017-10-01}{2017-10-18} \\
-  \ganttbar[progress=99,inline=false]{Review ancien projet}{2017-10-01}{2017-10-08} \\
-  \ganttbar[progress=90,inline=false]{Recherche d'outils}{2017-10-08}{2017-10-12}\\
-  \ganttlinkedbar[progress=10,inline=false]{Comparaison outils}{2017-10-12}{2017-10-18}\\
+  \ganttbar[progress=100,inline=false]{Review ancien projet}{2017-10-01}{2017-10-08} \\
+  \ganttbar[progress=100,inline=false]{Recherche d'outils}{2017-10-08}{2017-10-12}\\
+  \ganttlinkedbar[progress=90,inline=false]{Comparaison outils}{2017-10-12}{2017-10-18}\\
   \ganttmilestone[inline=false]{M1: choix de l'outil}{2017-10-18}\\
 
   %CONCEPTION
   \ganttgroup[inline=false]{Conception}{2017-10-18}{2017-12-24}\\
-  \ganttbar[inline=false,progress=0]{Schémas d'intégration}{2017-10-18}{2017-11-01}\\
   \ganttbar[inline=false,progress=0]{Diag. Classes}{2017-11-01}{2017-11-09}\\
   \ganttbar[inline=false,progress=0]{Cas tests}{2017-11-06}{2017-11-18}\\
-  \ganttmilestone[inline=false]{M2: diagrammes}{2017-11-24} \\
+  \ganttmilestone[inline=false]{D2: diagramme classe}{2017-11-24} \\
 
   %1st PRESENTATION
   \ganttgroup[inline=false]{Présentation 1}{2017-11-05}{2017-11-08}\\
   \ganttbar[progress=0,inline=false]{Préparation}{2017-11-05}{2017-11-08} \\
-  \ganttmilestone[inline=false]{Présentation}{2017-11-08} \\
+  \ganttmilestone[inline=false]{D3: power point}{2017-11-08} \\
 
   %IMPLEMENTATION
   \ganttgroup[inline=false]{Implémentation}{2017-11-23}{2018-01-14} \\
-  \ganttbar[inline=false,progress=0]{Temps réservé}{2017-11-23}{2018-01-12}\\
-  \ganttmilestone[inline=false]{M3: prototype fonctionnel}{2017-12-18}\\
+  \ganttbar[inline=false,progress=0]{Créer graphe augmenté}{2017-11-23}{2017-12-1}\\
+  \ganttbar[inline=false,progress=0]{Intégrer visualisation}{2017-12-1}{2017-12-14}\\
+  \ganttbar[inline=false,progress=0]{Lay-outs et filtres}{2017-12-14}{2017-12-19}\\
+  \ganttbar[inline=false,progress=0]{Annotations}{2017-12-20}{2017-12-24}\\
+  \ganttbar[inline=false,progress=0]{Export des graphes}{2018-1-8}{2018-1-10}\\
+  \ganttmilestone[inline=false]{M2: prototype fonctionnel}{2017-12-18}\\
 
   %TESTS
   \ganttgroup[inline=false]{Tests}{2017-12-11}{2018-02-01} \\
-  \ganttbar[inline=false,progress=0]{Unitaires}{2017-12-11}{2018-01-18} \\
+  \ganttbar[inline=false,progress=0]{Unitaires}{2017-12-11}{2017-12-23}
+  \ganttlinkedbar[progress=0]{}{2018-1-8}{2018-1-18}\\
   \ganttbar[inline=false,progress=0]{fonctionnels}{2018-01-12}{2018-02-01} \\
-  \ganttmilestone[inline=false]{D2: application finale}{2018-2-1}\\
+  \ganttmilestone[inline=false]{D4: application finale}{2018-2-1}\\
 
   %RAPPORT
-  \ganttgroup[inline=false]{Documentation}{2017-10-16}{2018-02-01}\\
-  \ganttbar[inline=false,progress=100]{Choix de l'outil}{2017-10-20}{2017-10-26}\\
-  \ganttlinkedbar[inline=false,progress=0]{Conception}{2017-11-20}{2017-11-30} \\
-  \ganttlinkedbar[inline=false,progress=0]{Implémentation}{2017-12-06}{2018-02-01}\\
+  \ganttgroup[inline=false]{Documentation}{2017-10-5}{2018-02-01}\\
+  \ganttbar[progress=100,inline=false]{UC général}{2017-10-05}{2017-10-15}\\
+  \ganttbar[inline=false,progress=90]{Choix de l'outil}{2017-10-20}{2017-10-26}\\
+  \ganttlinkedbar[inline=false,progress=0]{Diagramme classe}{2017-11-20}{2017-11-30} \\
   \ganttbar[inline=false,progress=0]{Tests}{2018-1-21}{2018-2-1} \\
-  \ganttbar[inline=false,progress=0]{Mode d'emploi}{2018-1-8}{2018-2-1}\\
-  \ganttmilestone[inline=false]{D3: rapport final}{2018-02-01} \\
+  \ganttbar[inline=false,progress=0]{D6: mode d'emploi}{2018-1-8}{2018-2-1}\\
+  \ganttmilestone[inline=false]{D5: rapport final}{2018-02-01} \\
 
   \ganttgroup[inline=false]{Défense}{2018-02-02}{2018-02-07}\\
   \ganttbar[inline=false,progress=0]{Préparation}{2018-02-02}{2018-02-07}\\
-  \ganttmilestone[inline=false]{M4: défense}{2018-02-08} \\
+  \ganttmilestone[inline=false]{D6: défense}{2018-02-08} \\
 
   % bottom nodes
   \ganttbar[name=holiday-october-bottom, bar/.style={fill=none, draw=none}]{}{2017-10-23}{2017-10-29}
@@ -339,10 +350,10 @@
 
   % shading
   \begin{scope}
-    \draw[opacity=.7,line width=7mm](holiday-october-top) -- ($(holiday-october-bottom)+(0,-5pt)$);
+    \draw[opacity=.7,line width=6.3mm](holiday-october-top) -- ($(holiday-october-bottom)+(0,-5pt)$);
     % \draw[opacity=.7,line width=3](holiday-november-top) -- ($(holiday-november-bottom)+(0,-5pt)$);
     % \draw[opacity=.7,line width=3](holiday-december1-top) -- ($(holiday-december1-bottom)+(0,-5pt)$);
-    \draw[opacity=.7,line width=15mm](holiday-december-top) -- ($(holiday-december-bottom)+(0,-5pt)$);
+    \draw[opacity=.7,line width=13.5mm](holiday-december-top) -- ($(holiday-december-bottom)+(0,-5pt)$);
   \end{scope}
 \end{ganttchart} \\
 % \begin{ganttchart}[%Specs]
@@ -370,6 +381,7 @@
 \section{Annexe}
 \begin{enumerate}
   \item Résumé des choix du projet précédent.
+  \item Use case de la nouvelle application.
 \end{enumerate}
 
 \newpage
