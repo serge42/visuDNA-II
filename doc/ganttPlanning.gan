@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="VisuDNA-II" company="HES-SO" webLink="https://redmine.forge.hefr.ch/projects/visudna-ii" view-date="2017-09-25" view-index="0" gantt-divider-location="358" resource-divider-location="300" version="2.8.5" locale="fr_CH">
+<?xml version="1.0" encoding="UTF-8"?><project name="VisuDNA-II" company="HES-SO" webLink="https://redmine.forge.hefr.ch/projects/visudna-ii" view-date="2017-09-25" view-index="0" gantt-divider-location="358" resource-divider-location="300" version="2.8.5" locale="fr">
     <description/>
     <view zooming-state="default:7" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="167" order="0"/>
-        <field id="tpd4" name="Date de début" width="64" order="1"/>
-        <field id="tpd5" name="Date de fin" width="64" order="2"/>
-        <field id="tpd0" name="Type" width="15" order="3"/>
-        <field id="tpd7" name="Avancée" width="44" order="4"/>
+        <field id="tpd3" name="Nom" width="187" order="0"/>
+        <field id="tpd4" name="Date de début" width="84" order="1"/>
+        <field id="tpd5" name="Date de fin" width="83" order="2"/>
         <option id="color.recent"><![CDATA[#00ffff #ff0000 #33ff33 #9900cc #cccc00 #ff9900]]></option>
     </view>
     <view id="resource-table">
