@@ -58,8 +58,8 @@ class HideUnrelated(tlp.BooleanAlgorithm):
     self.p_list = patientsNodes
     res = list()
     for p in patientsNodes:
-      self.applyFilter(p, min, max, 0, [])
-      res.append(p)
+      l = self.applyFilter(p, min, max, 0, [], p)
+      res += l
       
     for e in res:
       self.result.setEdgeValue(e, True)
@@ -90,27 +90,27 @@ class HideUnrelated(tlp.BooleanAlgorithm):
     print(time.time() - start_time)
     return True
     
-  def applyFilter(self, node, min, max, niv, visited):
-    if node in visited:
+  def applyFilter(self, node, min, max, niv, visited, pStart):
+    if node in visited or niv > max:
       return list()
 
     visited.append(node)
     neighs = self.graph.getInOutNodes(node)
     res_list = list()
     if niv < max:
-      niv += 1
       for n in neighs:
-        l = self.applyFilter(n, min, max, niv, visited)
+        l = self.applyFilter(n, min, max, (niv+1), visited, pStart)
         if not l == []:
-          res_list.append(l)
+          res_list += l
           e = self.graph.existEdge(node, n, False)
           res_list.append(e)
     
     if niv >= min and niv <= max:
       for n in neighs:
-        if n in self.p_list:
-          e = self.graph.existEdge(node, n, False)
-          res_list.append(e)
+        for p in self.p_list:
+          if not p == pStart and n == p:
+            e = self.graph.existEdge(node, n, False)
+            res_list.append(e)
           
     return res_list
 
