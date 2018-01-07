@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="VisuDNA-II" company="HES-SO" webLink="https://redmine.forge.hefr.ch/projects/visudna-ii" view-date="2017-09-11" view-index="0" gantt-divider-location="358" resource-divider-location="300" version="2.8.5" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="VisuDNA-II" company="HES-SO" webLink="https://redmine.forge.hefr.ch/projects/visudna-ii" view-date="2017-09-11" view-index="0" gantt-divider-location="294" resource-divider-location="300" version="2.8.5" locale="fr">
     <description/>
     <view zooming-state="default:7" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="187" order="0"/>
-        <field id="tpd4" name="Date de début" width="84" order="1"/>
-        <field id="tpd5" name="Date de fin" width="83" order="2"/>
+        <field id="tpd3" name="Nom" width="151" order="0"/>
+        <field id="tpd4" name="Date de début" width="70" order="1"/>
+        <field id="tpd5" name="Date de fin" width="69" order="2"/>
         <option id="color.recent"><![CDATA[#00ffff #ff0000 #33ff33 #9900cc #cccc00 #ff9900]]></option>
     </view>
     <view id="resource-table">
@@ -81,22 +81,23 @@
             <task id="55" name="Modifier diagramme de séquence" color="#ff9900" meeting="false" start="2017-12-04" duration="5" complete="0" expand="true"/>
             <task id="20" name="D2 : rapport modélisation" color="#ff0000" meeting="true" start="2017-12-11" duration="0" complete="0" expand="true"/>
         </task>
-        <task id="66" name="Implémentation" meeting="false" start="2017-11-13" duration="30" complete="10" expand="true">
-            <task id="49" name="Définir set de données" color="#9900cc" meeting="false" start="2017-11-13" duration="3" complete="80" expand="true"/>
-            <task id="74" name="Modifier les données" color="#9900cc" meeting="false" start="2017-11-16" duration="3" complete="0" expand="true"/>
-            <task id="51" name="Créatio premier graphe" color="#9900cc" meeting="false" start="2017-11-27" duration="7" complete="0" expand="true"/>
-            <task id="68" name="Ajout des filtres" color="#9900cc" meeting="false" start="2017-12-12" duration="6" complete="0" expand="true"/>
-            <task id="71" name="Modifier layouts" color="#9900cc" meeting="false" start="2017-12-20" duration="3" complete="0" expand="true"/>
-            <task id="78" name="M2 : Prototype fonctionnel" color="#ff0000" meeting="true" start="2017-12-22" duration="0" complete="0" expand="true"/>
+        <task id="66" name="Implémentation" meeting="false" start="2017-11-13" duration="37" complete="75" expand="true">
+            <task id="49" name="Définir set de données" color="#9900cc" meeting="false" start="2017-11-13" duration="3" complete="100" expand="true"/>
+            <task id="74" name="Modifier les données" color="#9900cc" meeting="false" start="2017-11-16" duration="3" complete="100" expand="true"/>
+            <task id="51" name="Ajout sample data" color="#9900cc" meeting="false" start="2017-11-27" duration="11" complete="90" expand="true"/>
+            <task id="68" name="Ajout des filtres" color="#9900cc" meeting="false" start="2017-12-12" duration="11" complete="81" expand="true"/>
+            <task id="71" name="Modifier layouts (temps)" color="#9900cc" meeting="false" start="2018-01-11" duration="4" complete="0" expand="true"/>
+            <task id="78" name="M2 : Prototype fonctionnel" color="#ff0000" meeting="true" start="2018-01-10" duration="0" complete="0" expand="true"/>
         </task>
-        <task id="77" name="Tests" meeting="false" start="2018-01-08" duration="18" complete="0" expand="true">
-            <task id="81" name="Tests unitaires" color="#33ff33" meeting="false" start="2018-01-08" duration="6" complete="0" expand="true"/>
-            <task id="82" name="Tests fonctionnels" color="#33ff33" meeting="false" start="2018-01-15" duration="13" complete="0" expand="true"/>
+        <task id="77" name="Tests" meeting="false" start="2018-01-11" duration="20" complete="0" expand="true">
+            <task id="81" name="Tests unitaires" color="#33ff33" meeting="false" start="2018-01-11" duration="7" complete="0" expand="true"/>
+            <task id="82" name="Tests fonctionnels" color="#33ff33" meeting="false" start="2018-01-22" duration="13" complete="0" expand="true"/>
             <task id="83" name="D4 : application finale" color="#ff0000" meeting="true" start="2018-02-01" duration="0" complete="0" expand="true"/>
         </task>
-        <task id="94" name="Documentation" meeting="false" start="2017-09-29" duration="75" complete="31" expand="true">
+        <task id="94" name="Documentation" meeting="false" start="2017-09-29" duration="75" complete="38" expand="true">
             <task id="100" name="UC général" color="#8cb6ce" meeting="false" start="2017-09-29" duration="7" complete="100" expand="true"/>
             <task id="103" name="Comparaison d'outils" color="#8cb6ce" meeting="false" start="2017-10-10" duration="4" complete="100" expand="true"/>
+            <task id="122" name="Contenu du git" color="#8cb6ce" meeting="false" start="2017-12-20" duration="4" complete="100" expand="true"/>
             <task id="115" name="Tests" color="#8cb6ce" meeting="false" start="2018-01-22" duration="9" complete="0" expand="true"/>
             <task id="116" name="Rapport final" color="#8cb6ce" meeting="false" start="2018-01-08" duration="15" complete="0" expand="true"/>
         </task>
