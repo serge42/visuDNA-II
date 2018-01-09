@@ -7,6 +7,8 @@ class HideUnrelated(tlp.BooleanAlgorithm):
     tlp.BooleanAlgorithm.__init__(self, context)
     self.addIntegerParameter('Min length', "Minimal number of nodes between two of the selected nodes.", '1')
     self.addIntegerParameter('Max length', "Maximal number of nodes between two of the selected nodes.", '1')
+    self.addBooleanParameter('Use selected', "Use manually selected nodes as sample data nodes", "False")
+    self.addBooleanParameter('Auto subgraph', "Automatically creates a subgraph with found paths", "False")
     # you can add parameters to the plugin here through the following syntax
     # self.add<Type>Parameter("<paramName>", "<paramDoc>", "<paramDefaultValue>")
     # (see documentation of class tlp.WithParameter to see what types of parameters are supported)
@@ -48,21 +50,38 @@ class HideUnrelated(tlp.BooleanAlgorithm):
     start_time = time.time()
     ns = g.nodes()
     patientsNodes = list()
+    bool_property = 'isPatient'
+    if self.dataSet['Use selected']:
+      bool_property = 'viewSelection'
+    
     for n in ns:
-      if g.getNodePropertiesValues(n)['isPatient']:
+      if g.getNodePropertiesValues(n)[bool_property]:
         #self.result.setNodeValue(n, True)
         patientsNodes.append(n)
-        
+      
     min = self.dataSet['Min length']
     max = self.dataSet['Max length']
     self.p_list = patientsNodes
+    """
     res = list()
     for p in patientsNodes:
       l = self.applyFilter(p, min, max, 0, [], p)
       res += l
-      
+    """
+    for i in xrange(0, len(patientsNodes)):
+      for j in xrange(i+1, len(patientsNodes)):
+        paths = self.findPathsBetween(patientsNodes[i], patientsNodes[j], min, max, 0, [])
+        if not paths == []:
+          for p in paths:
+            for e in p:
+              self.result.setEdgeValue(e, True)
+              ends = self.graph.ends(e)
+              for n in ends:
+                self.result.setNodeValue(n, True)
+    """  
     for e in res:
       self.result.setEdgeValue(e, True)
+    """
     """
     for p in patientsNodes:
       print "Patient: ", p
@@ -89,6 +108,29 @@ class HideUnrelated(tlp.BooleanAlgorithm):
     #      self.result.setNodeValue(n, True) 
     print(time.time() - start_time)
     return True
+    
+  def findPathsBetween(self, node_a, node_b, min_length, max_length, length, visited):
+    if length > max_length or node_a in visited:
+      return []
+    e = self.graph.existEdge(node_a, node_b, False)
+    if e.isValid(): # return path with length=0
+      return [[e]]
+      
+    visited.append(node_a)
+    elist = list()
+    neighs = self.graph.getInOutNodes(node_a) # length 1 neighbours
+    for n in neighs:
+      l = self.findPathsBetween(n, node_b, min_length, max_length, (length+1), visited)
+      if not l == []:
+#        print "(non-empty) List received from ", n, " to ", node_b, l
+        e1 = self.graph.existEdge(node_a, n, False) # we already know there's at least one, no need to Edge.isValid 
+        for subl in l:
+          if length == 0 and len(subl) < min_length:
+              continue            
+          subl.append(e1)
+          elist.append(subl)
+      
+    return elist
     
   def applyFilter(self, node, min, max, niv, visited, pStart):
     if node in visited or niv > max:
