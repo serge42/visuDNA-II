@@ -78,25 +78,14 @@ class HideUnrelated(tlp.BooleanAlgorithm):
               ends = self.graph.ends(e)
               for n in ends:
                 self.result.setNodeValue(n, True)
+                
+    # Auto subgraph creation if user wants it
+    if self.dataSet['Auto subgraph']:
+      subgraph = self.graph.addSubGraph(self.result)
+      subgraph.setName("VisuDNA-subgraph")
     """  
     for e in res:
       self.result.setEdgeValue(e, True)
-    """
-    """
-    for p in patientsNodes:
-      print "Patient: ", p
-      neighs = g.getInOutNodes(p) # Don't want all edges but all neighbour nodes
-      # There must be an edge between a node from neighs and another patient for it ot be included in the selection
-      for n in neighs:
-        print n
-        for p2 in patientsNodes:
-          if p == p2:
-            continue
-          e = g.existEdge(n, p2, False)
-          if e.isValid():
-            self.result.setNodeValue(n, True)
-            self.result.setNodeValue(p2, True)
-            self.result.setEdgeValue(e, True)
     """
     # Now we know every patients nodes in the graph
     # To be selected a node has to be directly connected to at least 1 patient node
