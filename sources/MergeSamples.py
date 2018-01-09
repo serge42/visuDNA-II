@@ -182,4 +182,4 @@ class MergeSamples(tlp.Algorithm):
  
 # The line below does the magic to register the plugin into the plugin database
 # and updates the GUI to make it accessible through the menus.
-tulipplugins.registerPlugin("MergeSamples", "Merge Samples", "SB", "27/11/2017", "", "1.0")
+tulipplugins.registerPlugin("MergeSamples", "VisuDNA - Merge Samples", "SB", "27/11/2017", "", "1.0")

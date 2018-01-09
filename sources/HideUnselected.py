@@ -158,4 +158,4 @@ class HideUnrelated(tlp.BooleanAlgorithm):
 
 # The line below does the magic to register the plugin to the plugin database
 # and updates the GUI to make it accessible through the menus.
-tulipplugins.registerPluginOfGroup("HideUnrelated", "Hide Unrelated", "SB", "13/12/2017", "info", "1.0", "Python")
+tulipplugins.registerPluginOfGroup("HideUnrelated", "VisuDNA - Hide Unrelated", "SB", "13/12/2017", "info", "1.0", "Python")
