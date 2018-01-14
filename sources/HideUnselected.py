@@ -3,16 +3,22 @@ import tulipplugins
 import time, dictmaker
 
 class HideUnrelated(tlp.BooleanAlgorithm):
+  TIME_EXEC = False; # used to get algorithm running time in case of performance testing
+  SAMPLE_DIFF_NAME = 'isPatient' # Name of the property that will be added to every sample node to differentiate them
+  PARAM_MIN_LENGTH = 'Min length'
+  PARAM_MAX_LENGTH = 'Max length'
+  PARAM_USE_SELECTION = 'Use selected'
+  PARAM_AUTO_SUB = 'Auto subgraph'
+  
   def __init__(self, context):
     tlp.BooleanAlgorithm.__init__(self, context)
-    self.addIntegerParameter('Min length', "Minimal number of nodes between two of the selected nodes.", '1')
-    self.addIntegerParameter('Max length', "Maximal number of nodes between two of the selected nodes.", '1')
-    self.addBooleanParameter('Use selected', "Use manually selected nodes as sample data nodes", "False")
-    self.addBooleanParameter('Auto subgraph', "Automatically creates a subgraph with found paths", "False")
+    self.addIntegerParameter(self.PARAM_MIN_LENGTH, "Minimal number of nodes between two of the selected nodes.", '1')
+    self.addIntegerParameter(self.PARAM_MAX_LENGTH, "Maximal number of nodes between two of the selected nodes.", '1')
+    self.addBooleanParameter(self.PARAM_USE_SELECTION, "Use manually selected nodes as sample data nodes", "False")
+    self.addBooleanParameter(self.PARAM_AUTO_SUB, "Automatically creates a subgraph with found paths", "False")
     # you can add parameters to the plugin here through the following syntax
     # self.add<Type>Parameter("<paramName>", "<paramDoc>", "<paramDefaultValue>")
     # (see documentation of class tlp.WithParameter to see what types of parameters are supported)
-
   def check(self):
     # This method is called before applying the algorithm on the input graph.
     # You can perform some precondition checks here.
@@ -20,10 +26,10 @@ class HideUnrelated(tlp.BooleanAlgorithm):
 
     # Must return a tuple (boolean, string). First member indicates if the algorithm can be applied
     # and the second one can be used to provide an error message
-    if self.dataSet['Min length'] > self.dataSet['Max length']:
+    if self.dataSet[self.PARAM_MIN_LENGTH] > self.dataSet[self.PARAM_MAX_LENGTH]:
       return (False, "Min length should be less or equal to max length.")
-    if self.dataSet['Min length'] < 0 or self.dataSet['Max length'] < 0:
-      return (False, "Min length and max length should be greater than 0; a min length of 0 would mean every nodes have to be kept")
+    if self.dataSet[self.PARAM_MIN_LENGTH] < 0 or self.dataSet[self.PARAM_MAX_LENGTH] < 0:
+      return (False, "Min length and max length should be greater than 0; a min length of 0 would mean every nodes to be selected")
     if not self.graph.existProperty('isPatient'):
       return (False, "There are no patient node in the selected graph.")
     return (True, "Ok")
@@ -50,8 +56,8 @@ class HideUnrelated(tlp.BooleanAlgorithm):
     start_time = time.time()
     ns = g.nodes()
     patientsNodes = list()
-    bool_property = 'isPatient'
-    if self.dataSet['Use selected']:
+    bool_property = self.SAMPLE_DIFF_NAME
+    if self.dataSet[self.PARAM_USE_SELECTION]:
       bool_property = 'viewSelection'
     
     for n in ns:
@@ -59,8 +65,8 @@ class HideUnrelated(tlp.BooleanAlgorithm):
         #self.result.setNodeValue(n, True)
         patientsNodes.append(n)
       
-    min = self.dataSet['Min length']
-    max = self.dataSet['Max length']
+    min = self.dataSet[self.PARAM_MIN_LENGTH]
+    max = self.dataSet[self.PARAM_MAX_LENGTH]
     self.p_list = patientsNodes
     """
     res = list()
@@ -68,7 +74,10 @@ class HideUnrelated(tlp.BooleanAlgorithm):
       l = self.applyFilter(p, min, max, 0, [], p)
       res += l
     """
-    for i in xrange(0, len(patientsNodes)):
+    self.pluginProgress.progress(0, len(patientsNodes))
+    for i in xrange(0, len(patientsNodes)):      
+      # add progress bar
+      self.pluginProgress.progress((i+1), len(patientsNodes))
       for j in xrange(i+1, len(patientsNodes)):
         paths = self.findPathsBetween(patientsNodes[i], patientsNodes[j], min, max, 0, [])
         if not paths == []:
@@ -78,9 +87,9 @@ class HideUnrelated(tlp.BooleanAlgorithm):
               ends = self.graph.ends(e)
               for n in ends:
                 self.result.setNodeValue(n, True)
-                
+             
     # Auto subgraph creation if user wants it
-    if self.dataSet['Auto subgraph']:
+    if self.dataSet[self.PARAM_AUTO_SUB]:
       subgraph = self.graph.addSubGraph(self.result)
       subgraph.setName("VisuDNA-subgraph")
     """  
@@ -121,6 +130,7 @@ class HideUnrelated(tlp.BooleanAlgorithm):
       
     return elist
     
+  # @Deprecated
   def applyFilter(self, node, min, max, niv, visited, pStart):
     if node in visited or niv > max:
       return list()
@@ -147,4 +157,4 @@ class HideUnrelated(tlp.BooleanAlgorithm):
 
 # The line below does the magic to register the plugin to the plugin database
 # and updates the GUI to make it accessible through the menus.
-tulipplugins.registerPluginOfGroup("HideUnrelated", "VisuDNA - Hide Unrelated", "SB", "13/12/2017", "info", "1.0", "Python")
+tulipplugins.registerPluginOfGroup("HideUnrelated", "VisuDNA - Select Related", "SB", "13/12/2017", "info", "1.0", "Python")
